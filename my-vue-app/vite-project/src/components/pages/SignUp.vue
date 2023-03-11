@@ -1,29 +1,27 @@
 <script setup>
-import { reactive } from '@vue/reactivity';
+import { reactive } from "@vue/reactivity";
 import Email from "../input/Email.vue";
 import Password from "../input/Password.vue";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useRouter } from "vue-router"
+import { useRouter } from "vue-router";
 
 const data = reactive({
   email: "",
   password: "",
   passwordReinput: "",
 });
-const router = useRouter()
+const router = useRouter();
 const auth = getAuth();
 const signUp = () => {
   createUserWithEmailAndPassword(auth, data.email, data.password)
     .then((userCredential) => {
-      alert("ユーザー作成に成功しました！")
+      alert("ユーザー作成に成功しました！");
     })
     .catch((error) => {
-      console.log(error)
-      alert("ユーザー作成に失敗しました")
-    })
-}
-
-
+      console.log(error);
+      alert("ユーザー作成に失敗しました");
+    });
+};
 </script>
 
 <template>
@@ -37,10 +35,24 @@ const signUp = () => {
                 <h3 class="mb-5">Sign Up</h3>
 
                 <Email id="email" title="Email" v-model="data.email" />
-                <Password id="password" title="Password(6文字)" v-model="data.password" />
-                <Password id="password-reinput" title="Password(再入力)" v-model="data.passwordReinput" />
+                <Password
+                  id="password"
+                  title="Password(6文字)"
+                  v-model="data.password"
+                />
+                <Password
+                  id="password-reinput"
+                  title="Password(再入力)"
+                  v-model="data.passwordReinput"
+                />
 
-                <button class="btn btn-outline-primary btn-lg btn-block" type="submit" @click="signUp">SignUp</button>
+                <button
+                  class="btn btn-outline-primary btn-lg btn-block"
+                  type="submit"
+                  @click="signUp"
+                >
+                  SignUp
+                </button>
               </div>
             </div>
           </div>

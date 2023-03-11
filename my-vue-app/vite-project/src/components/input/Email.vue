@@ -9,13 +9,14 @@ const emit = defineEmits(["update:modelValue"]);
 
 <template>
   <div class="form-outline mb-4">
-  <input
-  type="email"
-  :id="id"
-  :value="props.modelValue"
-  @input="($event) => emit('update:modelValue', $event.target.value)"
-  class="form-control form-control-lg" />
-  <label class="form-label" :for="props.id">{{ props.title }}</label>
+    <input
+      type="email"
+      :id="id"
+      :value="props.modelValue"
+      @input="($event) => emit('update:modelValue', $event.target.value)"
+      class="form-control form-control-lg"
+    />
+    <label class="form-label" :for="props.id">{{ props.title }}</label>
   </div>
 </template>
 

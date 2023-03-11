@@ -1,19 +1,19 @@
 <script setup>
 import { ref } from "vue";
-const emit =defineEmits(["sendMessage"]);
+const emit = defineEmits(["sendMessage"]);
 
-const input = ref('');
+const input = ref("");
 const update = (value) => {
   const messageObj = {
     message: value,
-  }
-  emit('sendMessage', messageObj)
-}
+  };
+  emit("sendMessage", messageObj);
+};
 const doSend = () => {
-  if (input.value === '') return;
+  if (input.value === "") return;
   update(input.value);
-  input.value = '';
-}
+  input.value = "";
+};
 </script>
 
 <template>

@@ -1,8 +1,8 @@
 <script setup>
 const props = defineProps({
   modelValue: String,
-})
-const emit = defineEmits(['update:modelValue'])
+});
+const emit = defineEmits(["update:modelValue"]);
 </script>
 
 <template>
@@ -14,10 +14,9 @@ const emit = defineEmits(['update:modelValue'])
       type="text"
       name="displayName"
       :value="props.modelValue"
-      @change="(e) => emit('update', e.target.value)" />
+      @change="(e) => emit('update', e.target.value)"
+    />
   </h5>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
