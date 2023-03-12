@@ -1,6 +1,7 @@
 {
   "hosting": {
     "site": "vite-project",
+    "target": "vite-project",
     "public": "dist",
     "ignore": [
       "firebase.json",
